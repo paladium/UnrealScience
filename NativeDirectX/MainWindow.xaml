@@ -1,0 +1,189 @@
+﻿<Window x:Class="NativeDirectX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Unreal Science Editor" Height="350" Width="525"
+        xmlns:panel="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" WindowState="Maximized" Loaded="Window_Loaded"
+        xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:auto="WPFTextBoxAutoComplete"
+        xmlns:controls="clr-namespace:NativeDirectX"
+        xmlns:cControls="clr-namespace:UnrealScience.Controls">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="MenuItem_Click"/>
+                <MenuItem Header="Save" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Save To" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click_3"/>
+            </MenuItem>
+            
+            <MenuItem Header="Edit">
+                <MenuItem Header="Create">
+                    <MenuItem Header="Box" Name="CreateBox" Click="CreateBox_Click"/>
+                    <MenuItem Header="Sphere" Name="CreateSphere" Click="CreateSphere_Click"/>
+                    <MenuItem Header="Plane" Name="CreatePlane" Click="CreatePlane_Click"/>
+                    <MenuItem Header="Cone" Name="CreateCone" Click="CreateCone_Click"/>
+                    <MenuItem Header="Cylinder" Name="CreateCylinder" Click="CreateCylinder_Click"/>
+                </MenuItem>
+            </MenuItem>
+            
+            <MenuItem Header="Window">
+                <MenuItem Header="Console" Name="ShowConsole" Click="ShowConsole_Click"></MenuItem>
+                <MenuItem Header="Properties" Name="ShowProperties" Click="ShowProperties_Click"></MenuItem>
+                <MenuItem Header="Animation" Name="ShowAnimation" Click="ShowAnimation_Click"></MenuItem>
+            </MenuItem>
+            
+            
+        </Menu>
+
+        <ToolBar Grid.Row="1" HorizontalAlignment="Stretch">
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/save.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown_4"/>
+            <Button Margin="0, 0, 50, 0" Content="Play &#9654;" Click="Button_Click" FontSize="26"/>
+            <Slider Margin="0, 0, 50, 0" Minimum="0.1" Maximum="10" Width="100" Name="CameraSpeed" VerticalAlignment="Center" ValueChanged="Slider_ValueChanged"/>
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/circle.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/cube.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown_1"/>
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/cone.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown_2"/>
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/clone.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown_3"/>
+            <Image Margin="0, 0, 50, 0" Cursor="Hand" Source="Resources/model.png" Width="50" MouseLeftButtonDown="Image_MouseLeftButtonDown_5"/>
+        </ToolBar>
+
+        <avalonDock:DockingManager x:Name="dockingManager" Grid.Row="2">
+            <avalonDock:DockingManager.Theme>
+                <avalonDock:MetroTheme/>
+            </avalonDock:DockingManager.Theme>
+            <avalonDock:LayoutRoot>
+                <avalonDock:LayoutPanel Orientation="Horizontal">
+
+                    <avalonDock:LayoutDocumentPane SelectedContentIndex="0">
+                        <avalonDock:LayoutDocument Title="Scene" CanClose="False">
+                            <WindowsFormsHost x:Name="host" SizeChanged="host_SizeChanged">
+                                <panel:Panel Cursor="Arrow" x:Name="panel" MouseDown="panel_MouseDown" MouseUp="panel_MouseUp" MouseMove="panel_MouseMove"></panel:Panel>
+                            </WindowsFormsHost>
+                        </avalonDock:LayoutDocument>
+                        
+                        <avalonDock:LayoutDocument Title="UI Editor" CanClose="False">
+                            <controls:UIEditor></controls:UIEditor>
+                        </avalonDock:LayoutDocument>
+                        <avalonDock:LayoutDocument Title="Animation Editor" CanClose="False">
+                            <controls:AnimationManager x:Name="AnimationManager"/>
+                        </avalonDock:LayoutDocument>
+                        
+                        <avalonDock:LayoutDocument Title="Graph3D Builder" CanClose="False">
+                            <cControls:Graph3D/>
+                        </avalonDock:LayoutDocument>
+                    </avalonDock:LayoutDocumentPane>
+                    
+                   
+
+                </avalonDock:LayoutPanel>
+                <avalonDock:LayoutRoot.RightSide>
+                    <avalonDock:LayoutAnchorSide>
+                        <avalonDock:LayoutAnchorGroup>
+                            <avalonDock:LayoutAnchorable Title="Console" CanClose="False" x:Name="Console">
+                                
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="100px"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBox Name="box" Grid.Row="0" >
+
+                                    </TextBox>
+                                    
+                                    
+                                    
+                                    <!--<auto:AutoCompleteTextBox Name="field" PreviewKeyDown="field_PreviewKeyDown"></auto:AutoCompleteTextBox>-->
+                                    
+                                    <TextBox Name="field" Grid.Row="1" PreviewKeyDown="field_PreviewKeyDown" IsEnabled="True"></TextBox>
+                                </Grid>
+                                
+                               
+                            </avalonDock:LayoutAnchorable>
+                            
+                            <avalonDock:LayoutAnchorable Title="Animation Console Editor" CanClose="False" x:Name="Animation">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="50px"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBox Name="AnimationField" MinHeight="50px" HorizontalAlignment="Stretch" AcceptsReturn="True">
+                                    </TextBox>
+                                    
+                                    <Button Content="Submit Animation" Grid.Row="1" Name="SubmitAnimation" Click="SubmitAnimation_Click"/>
+                                </Grid>
+                            </avalonDock:LayoutAnchorable>
+
+                           
+                        </avalonDock:LayoutAnchorGroup>
+                    </avalonDock:LayoutAnchorSide>
+                </avalonDock:LayoutRoot.RightSide>
+                
+                <avalonDock:LayoutRoot.LeftSide>
+                    <avalonDock:LayoutAnchorSide>
+                        <avalonDock:LayoutAnchorGroup>
+                            <avalonDock:LayoutAnchorable Title="Properties" x:Name="Properties">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" MinHeight="200px"/>
+                                    </Grid.RowDefinitions>
+                                    <!--<xctk:PropertyGrid AutoGenerateProperties="true" Name="properties">
+                                       
+                                    </xctk:PropertyGrid>-->
+                                    
+                                    <cControls:PropertyGrid x:Name="PropertyGrid"></cControls:PropertyGrid>
+                                    
+                                </Grid>
+                            </avalonDock:LayoutAnchorable>
+
+                            <avalonDock:LayoutAnchorable Title="Hierarchy" CanClose="False">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="50px"/>
+                                    </Grid.RowDefinitions>
+
+                                    <ListBox Name="Hierarchy" SelectionChanged="Hierarchy_SelectionChanged" MouseDown="Hierarchy_MouseDown">
+                                        <ListBox.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Delete" Name="HierarchyDelete" Click="HierarchyDelete_Click"></MenuItem>
+                                                <MenuItem Header="Rename" Name="HierarchyRename" Click="HierarchyRename_Click"></MenuItem>
+                                            </ContextMenu>
+                                        </ListBox.ContextMenu>
+                                    </ListBox>
+
+                                </Grid>
+                            </avalonDock:LayoutAnchorable>
+                            
+                            <avalonDock:LayoutAnchorable Title="Say something">
+                                <Grid>
+                                    <Button Name="Say" Click="Say_Click" IsEnabled="True" Content="say"></Button>
+                                    
+                                </Grid>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorGroup>
+                    </avalonDock:LayoutAnchorSide>
+                </avalonDock:LayoutRoot.LeftSide>
+
+            </avalonDock:LayoutRoot>
+        </avalonDock:DockingManager>
+
+        <StatusBar Grid.Row="3">
+            <StatusBarItem Content="Ready"/>
+        </StatusBar>
+
+        
+        
+        
+        
+        
+    </Grid>
+</Window>

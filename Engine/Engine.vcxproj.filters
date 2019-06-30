@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\3DSceneObjects">
+      <UniqueIdentifier>{4e7ad3e8-0ed4-42a0-80ab-32b777c7d7db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UIObjects">
+      <UniqueIdentifier>{5564a348-2b64-48f4-a6a0-42ed330533a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DirectxRendering">
+      <UniqueIdentifier>{69a6dae1-7a0f-4f1d-8650-764552ed61c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AnimationSystem">
+      <UniqueIdentifier>{a40eeeb9-72fd-4f4a-b350-b207e72ea9bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{eb5b6ccb-569a-435f-9796-84d57bebd93f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AnimationSystem">
+      <UniqueIdentifier>{4cd9acda-9d70-4e55-bf89-212794b45c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3DSceneObjects">
+      <UniqueIdentifier>{bceb7971-cc3f-47f7-a431-efcb389101df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DirectxRendering">
+      <UniqueIdentifier>{726d6abf-f807-45f9-a7ac-0471069d528c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc">
+      <UniqueIdentifier>{4a6f112f-639a-473a-a206-fd88c31bcadb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ShaderSystem">
+      <UniqueIdentifier>{26627005-b93b-47c9-ae91-bc6abc998981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ShaderSystem">
+      <UniqueIdentifier>{a5769adf-6d97-4b53-895d-2998e4a72fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIObjects">
+      <UniqueIdentifier>{0f236c56-d6fb-4a6e-bd0d-623480b1ab77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera3D.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ColoredBox.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube3D.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Cylinder.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph3D.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh3D.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite2D.h">
+      <Filter>Header Files\UIObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Text2D.h">
+      <Filter>Header Files\UIObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>Header Files\UIObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DApp.h">
+      <Filter>Header Files\DirectxRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\DirectxRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Header Files\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>Header Files\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenEffect.h">
+      <Filter>Header Files\ShaderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\ShaderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dUtil.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldSystem.h">
+      <Filter>Header Files\3DSceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorApp.h">
+      <Filter>Header Files\DirectxRendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>Source Files\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera3D.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ColoredBox.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube3D.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Cylinder.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph3D.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh3D.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DApp.cpp">
+      <Filter>Source Files\DirectxRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\DirectxRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dUtil.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenEffect.cpp">
+      <Filter>Source Files\ShaderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite2D.cpp">
+      <Filter>Source Files\UIObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Text2D.cpp">
+      <Filter>Source Files\UIObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElement.cpp">
+      <Filter>Source Files\UIObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldSystem.cpp">
+      <Filter>Source Files\3DSceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorApp.cpp">
+      <Filter>Source Files\DirectxRendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="test.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

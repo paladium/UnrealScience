@@ -1,0 +1,8 @@
+Debug/
+ipch/
+packages/
+Release/
+*.sdf
+NativeDirectX/bin
+UnrealScienceLibrary/bin
+UnrealSciencePlayer/bin
